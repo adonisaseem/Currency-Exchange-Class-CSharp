@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Currencies.cs" />
     <Compile Include="CurrencyConverter.cs" />
-    <Compile Include="CurrencyTest.cs" />
     <Compile Include="ICurrencyConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rates.cs" />
