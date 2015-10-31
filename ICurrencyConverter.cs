@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CurrencyExchange
+namespace CurrencyConverter
 {
     interface ICurrencyConverter
     {
@@ -16,7 +16,7 @@ namespace CurrencyExchange
         //EUR by default
         //Throws ApplicationException if value is not in currency list
 
-        Currencies BaseCurrency { get; set; } 
+        string BaseCurrency { get; set; } 
 
         //-----------------Methods------------------------------
 
@@ -27,7 +27,7 @@ namespace CurrencyExchange
         //returns Decimal - the exchanged amount on success
         //Throws ApplicationException if currency is not in currency list
 
-        decimal Exchange(decimal amount, Currencies from, Currencies to);
+        decimal Exchange(decimal amount, string from, string to = null);
 
         //Gets the cross rate between two currencies
         //param String from first Currency (three letter code)
@@ -35,18 +35,18 @@ namespace CurrencyExchange
         //returns decimal - the cross rate on success
         //Throws ApplicationException if currency is not in currency list
 
-        decimal CrossRate(Currencies from, Currencies to);
+        decimal CrossRate(string from, string to = null);
 
         //Gets the rates table based on Base currency
         //param string currencyList - list of comma separated Currencies to be included in the table. All currencies by default
         //returns IEnumerable<Rates> containing desired currencies and rates
         //Throws ApplicationException if currency is not in currency list
 
-        IList<Rates> GetRatesTable(List<Currencies> currencyList);
+        IEnumerable<Rates> GetRatesTable(string currencyList = null);
 
         //Gets the list of currencies. If sorted is true, the returned list is sorted. False by default
         //returns IEnumerable<string> of all available currencies 
 
-        IList<Currencies> GetCurrencyList(bool sorted = false);
+        IEnumerable<string> GetCurrencyList(bool sorted = false);
     }
 }

@@ -1,8 +1,8 @@
-﻿namespace CurrencyExchange
+﻿namespace CurrencyConverter
 {
     public struct Rates
     {
-        public Currencies Currency { get; set; }
+        public string Currency { get; set; }
         public string Rate { get; set; }
     }
 }
