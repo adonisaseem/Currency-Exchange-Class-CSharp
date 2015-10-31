@@ -22,7 +22,7 @@ namespace CurrencyExchange
     {
         private const string SourceUrl = @"http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
         private const string BackupSourceUrl = @"eurofxref-daily.xml";
-        private Currencies _baseCurrency = Currencies.EUR;
+        private Currencies _baseCurrency = Currencies.Eur;
         private readonly Dictionary<Currencies, decimal> _exchangeRates;
 
         /// <summary>

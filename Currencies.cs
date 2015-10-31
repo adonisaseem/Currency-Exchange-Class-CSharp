@@ -2,7 +2,7 @@
 {
     public enum Currencies
     {
-        EUR,
+        Eur,
         USD,
         JPY,
         BGN,
